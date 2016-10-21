@@ -14,7 +14,7 @@ module.exports = {
       { test: "/\.html$/", loader: "html?minize" },
       {
         test:  /\.(js|jsx)$/,
-        loader: 'babel',
+        loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react']
@@ -25,6 +25,9 @@ module.exports = {
   devServer: {
     contentBase: 'dist',
     port: 3000
+  },
+  eslint: {
+    configFile: './.eslintrc'
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin()
