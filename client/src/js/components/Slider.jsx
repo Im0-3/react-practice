@@ -1,3 +1,5 @@
+import SliderItem from './SliderItem.jsx';
+
 import React from 'react';
 
 class Slider extends React.Component {
@@ -5,7 +7,14 @@ class Slider extends React.Component {
     super(props);
   }
   render() {
-    return <div>{this.props.name}</div>;
+    let slideItemNode = this.props.slide.map((slide) => {
+      return (<SliderItem title={slide.title}></SliderItem>);
+    });
+    return (
+      <div>
+        {slideItemNode}
+      </div>
+    );
   }
 }
 
