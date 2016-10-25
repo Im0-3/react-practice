@@ -5,7 +5,12 @@ class SliderItem extends React.Component {
     super(props);
   }
   render() {
-    return <div>{this.props.name}</div>;
+    let className = `SlideItem SlideItem--0${this.props.index}`;
+    return (
+      <div className={className}>
+        {this.props.title}
+      </div>
+    )
   }
 }
 
